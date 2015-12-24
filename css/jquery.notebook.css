@@ -1,0 +1,259 @@
+.notebook-box{
+    position: relative;
+}
+.jquery-notebook.editor.n-placeholder:before {
+    color: #ccc;
+    font-style: italic;
+    content: attr(data-placeholder);
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+.jquery-notebook.editor{
+    min-height: 35px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    word-wrap: break-word;
+    vertical-align: top;
+    text-align: left;
+}
+.jquery-notebook.editor p{
+    margin: 0 0 10px;
+}
+.jquery-notebook.bubble {
+    z-index: 9999;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #2A3B3;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 0 2px rgba(255,255,255,0.2); /* Bubble Shadows */
+    background: rgb(35,164,193);
+	background: -moz-linear-gradient(top,  rgba(35,164,193,1) 0%, rgba(40,40,39,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(35,164,193,1)), color-stop(100%,rgba(40,40,39,1)));
+	background: -webkit-linear-gradient(top,  rgba(35,164,193,1) 0%,rgba(40,40,39,1) 100%);
+	background: -o-linear-gradient(top,  rgba(35,164,193,1) 0%,rgba(40,40,39,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(35,164,193,1) 0%,rgba(40,40,39,1) 100%);
+	background: linear-gradient(to bottom,  rgba(35,164,193,1) 0%,rgba(40,40,39,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#23a4c1', endColorstr='#282827',GradientType=0 );
+    -moz-transition: 0.15s ease-in-out;
+    -o-transition: 0.15s ease-in-out;
+    -ms-transition: 0.15s ease-in-out;
+    -webkit-transition: 0.15s ease-in-out;
+    transition: 0.15s ease-in-out;
+}
+.jquery-notebook.bubble.note-basic{
+    position: relative;
+    padding: 0;
+    width: 100%;
+    border-bottom: 0!important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.jquery-notebook.bubble.note-inline{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.jquery-notebook.bubble.note-basic:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.jquery-notebook.bubble.right-side:before {
+  right: 15px;
+  left: auto;
+}
+.jquery-notebook.bubble .bttn-wrapper{
+    white-space: nowrap;
+}
+.jquery-notebook.bubble .bttn{
+    margin: 0;
+    float: left;
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 34px;
+    height: 34px;
+    font-family: FontAwesome;
+    color: white;
+    font-size: 12pt;
+    -webkit-font-smoothing: antialiased;
+}
+.jquery-notebook.bubble button{
+    cursor: pointer;
+}
+.jquery-notebook.bubble .bttn:disabled, .jquery-notebook.bubble .n-trigger:disabled {
+    color: #aaa!important;
+    background: transparent!important;
+    cursor: default;
+}
+.jquery-notebook.bubble .bttn.active {
+    color: #60D778;
+}
+.jquery-notebook.bubble .n-trigger:after {
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: white;
+    content: ' ';
+    position: absolute;
+    top: 15px;
+    right: 2px;
+    color: inherit;
+    cursor: pointer;
+    z-index: 1000;
+    zoom: 1;
+}
+.jquery-notebook.bubble button .fore-color:before{
+    color: yellow;
+}
+
+.jquery-notebook.bubble button .back-color:before {
+    color: black;
+    background-color: yellow;
+}
+.jquery-notebook.bubble .dropdown{
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.jquery-notebook.bubble .dropdown .dropdown-menu{
+    display: none;
+    position: absolute;
+    text-align: left;
+    left: 0;
+    top: 35px;
+    margin-top: 0;
+    border: solid 1px #252525;
+    min-width: 70px;
+    max-height: 195px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    color: #fff;
+    padding: 0 5px;
+    list-style: none;
+    background-color: rgba(45, 81, 80, 0.9);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e52d5150,endColorstr=#e52d5150);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 0 2px rgba(255,255,255,0.2);
+    -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 0 2px rgba(255,255,255,0.2);
+    -o-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 0 2px rgba(255,255,255,0.2);
+    -ms-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 0 2px rgba(255,255,255,0.2);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 0 2px rgba(255,255,255,0.2);
+    z-index: 10000;
+}
+.jquery-notebook.bubble .dropdown .color-menu{
+    max-height: none;
+}
+.jquery-notebook.bubble .dropdown .dropdown-menu li {
+    position: relative;
+    display: list-item;
+    text-align: center;
+    border-bottom-color: rgba(255, 255, 255, 0.33);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    cursor: pointer;
+}
+
+.jquery-notebook.bubble .dropdown .dropdown-menu li span{
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    line-height: 16px;
+    white-space: nowrap;
+}
+.jquery-notebook.bubble .dropdown .dropdown-menu li .n-li-bttn{
+    margin: 5px 0;
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    line-height: 16px;
+    font-size: 16px;
+    width: 100%;
+    height: 16px;
+    cursor: pointer;
+    outline:none;
+}
+.jquery-notebook.bubble .dropdown .dropdown-menu .n-color{
+    margin: 5px 0px;
+}
+.jquery-notebook.bubble .dropdown .n-color p{
+    line-height: 10px;
+    margin: 3px;
+    text-align: right;
+}
+.jquery-notebook.bubble .dropdown .n-color p a{
+    cursor: pointer;
+}
+.jquery-notebook.bubble .dropdown .dropdown-menu .n-color-bttn{
+    display: inline;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    margin: 1px;
+    border: solid 1px #fff;
+    position: relative;
+    z-index: 100;
+    line-height: 16px!important;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+.jquery-notebook.bubble .dropdown .link-area{
+    max-height: none;
+    padding: 5px;
+}
+.jquery-notebook.bubble .link-area input {
+    height: 22px;
+    width: 180px;
+}
+.jquery-notebook.bubble .link-area input.error {
+    border: 1px solid red; 
+}
+.jquery-notebook.bubble .link-area button {
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 32px;
+    height: 34px;
+    font-family: FontAwesome;
+    color: white;
+    font-size: 12pt;
+    -webkit-font-smoothing: antialiased;
+}
+.jquery-notebook.bubble .clear-both{
+    clear:both;
+}
+.jquery-notebook.bubble hr{
+    border: 0;
+    border-top-color: white;
+    border-top-width: 1px;
+    border-top-style: groove;
+    margin: 0!important;
+    height: 0;
+}
